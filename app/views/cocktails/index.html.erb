@@ -1,6 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cocktails</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Cocktails</h1>
+        <p>for every occasion</p>
+      <%= link_to "Add Cocktail", new_cocktail_path, class: 'btn btn-flat'%>
+    </div>
+  </div>
+</div>
+
+<div class="text-center my-5">
+  <h1>Cocktails made for creative people</h1>
+  <p>Get the best Cocktail that fits the creative you!</p>
+</div>
 
 <table>
   <thead>
@@ -14,6 +27,8 @@
     <% @cocktails.sample(6).each do |cocktail| %>
       <tr>
         <td><%= cocktail.name %></td>
+
+        <td><%= link_to 'Add New Cocktail', new_cocktail_path %></td>
         <td><%= link_to 'Show', cocktail %></td>
         <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
         <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +39,23 @@
 
 <br>
 
-<%= link_to 'Add New Cocktail', new_cocktail_path %>
+<div class="footer text-center my-5" style="height: 80px;">
+ <p>Follow Cocktails</p>
+  <ul class="list-inline">
+    <li>
+      <a href="https://github.com/bfalt" target='_blank'>
+        <i class="fab fa-github-square icon-size"></i>
+        </a>
+      </li>
+    <li>
+      <a href="https://twitter.com/BrandonFalter" target='_blank'>
+        <i class="fab fa-twitter-square icon-size"></i>
+        </a>
+      </li>
+    <li>
+      <a href="https://www.facebook.com/brandonfalter" target='_blank'>
+        <i class="fab fa-facebook-square icon-size"></i>
+      </a>
+    </li>
+  </ul>
+</div>
