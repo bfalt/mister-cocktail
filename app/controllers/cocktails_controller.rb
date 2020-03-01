@@ -8,6 +8,8 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails/1
   def show
+    @doses = @cocktail.doses
+    @ingredients = @cocktail.ingredients
   end
 
   # GET /cocktails/new
@@ -46,13 +48,14 @@ class CocktailsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cocktail
-      @cocktail = Cocktail.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def cocktail_params
-      params.require(:cocktail).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def cocktail_params
+    params.require(:cocktail).permit(:name)
+  end
 end
